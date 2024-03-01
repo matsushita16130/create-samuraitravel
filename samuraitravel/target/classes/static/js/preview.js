@@ -2,7 +2,7 @@
 const imageInput = document.getElementById('imageFile');
 const imagePreview = document.getElementById('imagePreview');
 
-imageImput.addEventListener('change', () => {
+imageInput.addEventListener('change', () => {
 	if (imageInput.files[0]) {
 		let fileReader = new FileReader();
 		fileReader.onload = () => {
@@ -10,6 +10,6 @@ imageImput.addEventListener('change', () => {
 		}
 		fileReader.readAsDataURL(imageInput.files[0]);
 	} else {
-		imagePreview.innerHTMLv= ';'
+		imagePreview.innerHTML = '';
 	}
 })

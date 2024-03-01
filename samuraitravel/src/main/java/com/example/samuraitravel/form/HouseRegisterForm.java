@@ -26,6 +26,9 @@ public class HouseRegisterForm {
 	@Min(value = 1, message = "定員は1人以上に設定してください。")
 	private Integer capacity;
 	
+	@NotBlank(message = "郵便番号を入力してください。")
+	private String postalCode;
+	
 	@NotBlank(message = "住所を入力してください。")
 	private String address;
 	
