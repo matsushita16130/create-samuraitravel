@@ -25,7 +25,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.samuraitravel.entity.House;
-//管理者用の民宿登録ページ
+// 管理者用の民宿編集ページ
+import com.example.samuraitravel.form.HouseEditForm;
+// 管理者用の民宿登録ページ
 import com.example.samuraitravel.form.HouseRegisterForm;
 import com.example.samuraitravel.repository.HouseRepository;
 // 民宿の登録機能
@@ -103,5 +105,18 @@ public class AdminHouseController {
 		redirectAttributes.addFlashAttribute("successMessage", "民宿を登録しました。");
 		
 		return "redirect:/admin/houses";
+	}
+	
+	// 管理者用の民宿編集ページ
+	@GetMapping("/{id}/edit")
+	public String edit(@PathVariable(name = "id") Integer id, Model model) {
+		House house = houseRepository.getReferenceById(id);
+		String imageName = house.getImageName();
+		HouseEditForm houseEditForm = new HouseEditForm(house.getId(), house.getName(), null, house.getDescription(), house.getPrice(), house.getCapacity(), house.getPostalCode(), house.getAddress(), house.getPhoneNumber());
+		
+		model.addAttribute("imageName", imageName);
+		model.addAttribute("houseEditForm", houseEditForm);
+		
+		return "admin/houses/edit";
 	}
 }
