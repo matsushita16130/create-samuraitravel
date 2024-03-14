@@ -40,7 +40,7 @@ public class User {
 	@Column(name = "email")
 	private String email;
 	
-	@Column(name = "passwoed")
+	@Column(name = "password")
 	private String password;
 	
 	@ManyToOne
@@ -50,7 +50,7 @@ public class User {
 	@Column(name = "enabled")
 	private Boolean enabled;
 	
-	@Column(name = "creater_at", insertable = false, updatable = false)
+	@Column(name = "created_at", insertable = false, updatable = false)
 	private Timestamp createdAt;
 	
 	@Column(name = "updated_at", insertable = false, updatable = false)

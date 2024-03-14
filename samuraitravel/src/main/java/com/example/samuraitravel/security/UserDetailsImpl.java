@@ -56,7 +56,7 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}
 	
 	// ユーザのパスワードが期限切れでなければtrueを返す

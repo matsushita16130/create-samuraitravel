@@ -103,6 +103,11 @@ footer {
 	opacity: 0.8;
 }
 
+/* ログイン状態やロール別にページの表示を切り替える */
+.samuraitravel-dropdown-item:active {
+	background-color: #5196a6;	
+}
+
 @media screen and (min-width: 1400px) {
 	.samuraitravel-container {
 		max-width: 1200px;

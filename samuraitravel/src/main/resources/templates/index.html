@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th = "https://www.thymeleaf.org">
+<!--<html xmlns:th = "https://www.thymeleaf.org">-->
+<!-- ログイン状態やロール別にページの表示を切り替える -->
+<html xlmns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<head>
 		<!--<meta charset = "UTF-8">
 		<meta name = "viewport" content="width=device-width, initial-scale=1">-->
@@ -28,6 +30,12 @@
                      <div th:if="${param.loggedOut}" class="alert alert-info">
                          ログアウトしました。
                      </div>
+                     
+                     <!-- 会員登録機能を作成 -->
+                     <div th:if="${successMessage}" class="alert alert-info">
+						 <span th:text="${successMessage}"></span>
+					 </div>
+					 
 				</div>
 			</main>
 			

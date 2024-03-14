@@ -20,7 +20,11 @@ public class WebSecurityConfig {
 		http
 			.authorizeHttpRequests((requests) -> requests
 				// 全てのユーザーにアクセスを許可するURL
-				.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/").permitAll()
+				//.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/").permitAll()
+				
+				// 会員登録機能を作成
+				.requestMatchers("/css/**", "/images/**", "/js/**", "/storage/**", "/", "/signup/**").permitAll()
+					
 				// 管理者にのみアクセスを許可するURL
 				.requestMatchers("/admin/**").hasRole("ADMIN")
 				// 上記以外のURLはログインが必要（会員または管理者のどちらでもOK）
